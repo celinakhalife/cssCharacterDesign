@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "animalKingdom": {
+    "alien": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/animalKingdom",
+            "outputPath": "dist/alien",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -54,18 +54,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "animalKingdom:build"
+            "browserTarget": "alien:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "animalKingdom:build:production"
+              "browserTarget": "alien:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "animalKingdom:build"
+            "browserTarget": "alien:build"
           }
         },
         "test": {
@@ -99,7 +99,7 @@
         }
       }
     },
-    "animalKingdom-e2e": {
+    "alien-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -107,11 +107,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "animalKingdom:serve"
+            "devServerTarget": "alien:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "animalKingdom:serve:production"
+              "devServerTarget": "alien:serve:production"
             }
           }
         },
@@ -127,5 +127,5 @@
       }
     }
   },
-  "defaultProject": "animalKingdom"
+  "defaultProject": "alien"
 }
