@@ -1,0 +1,47 @@
+.background {
+  background: rgb(61, 36, 101); /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    rgba(61, 36, 101, 1) 0%,
+    rgba(82, 144, 242, 1) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    rgba(61, 36, 101, 1) 0%,
+    rgba(82, 144, 242, 1) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    rgba(61, 36, 101, 1) 0%,
+    rgba(82, 144, 242, 1) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d2465', endColorstr='#5290f2',GradientType=0 ); /* IE6-9 */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  .planet {
+    margin-top: 10%;
+    width: 80vw;
+    height: 80vw;
+    background-color: rgba(223, 219, 220, 0.2);
+    border-radius: 50%;
+    margin-left: 10%;
+
+    .circle-2,
+    .circle-1 {
+      width: 80%;
+      height: 80%;
+      border-radius: 50%;
+      margin-top: 10%;
+      margin-left: 10%;
+      display: inline-block;
+    }
+
+    .circle-2 {
+      background-color: rgba(223, 219, 220, 0.1);
+      .circle-1 {
+        background-color: rgb(223, 219, 220);
+      }
+    }
+  }
+}

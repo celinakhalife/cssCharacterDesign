@@ -1,0 +1,20 @@
+main{
+    width:100%;
+    height:100%;
+}
+.monster{
+    position:absolute;
+    left:50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width:230px;
+    height:350px;
+    background: red;
+
+    .head{
+        background: green;
+        width:100%;
+        height:20%;
+        border-radius: 50% 20% 20% 50% / 50% 20% 20% 50%;
+    }
+}
