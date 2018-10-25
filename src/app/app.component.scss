@@ -4,22 +4,54 @@
     top,
     rgba(61, 36, 101, 1) 0%,
     rgba(82, 144, 242, 1) 100%
-  ); /* FF3.6-15 */
+    ); /* FF3.6-15 */
   background: -webkit-linear-gradient(
     top,
     rgba(61, 36, 101, 1) 0%,
     rgba(82, 144, 242, 1) 100%
-  ); /* Chrome10-25,Safari5.1-6 */
+    ); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(
     to bottom,
     rgba(61, 36, 101, 1) 0%,
     rgba(82, 144, 242, 1) 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d2465', endColorstr='#5290f2',GradientType=0 ); /* IE6-9 */
   width: 100%;
   height: 100%;
   overflow: hidden;
   position: relative;
+
+  /*stars*/
+  
+  .stars {
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    z-index: 0;
+  }
+
+  @for $i from 0 through 40 {
+    .stars:nth-child(#{$i}) {
+      top: random(50) + 1 + %;
+      left: random(100) + 0 +  %;
+    };
+  }
+
+  /*tiny*/
+  .tinyStars {
+    font-size: 10px;
+    color: white;
+    position: absolute;
+  }
+
+  @for $j from 0 through 500 {
+    .tinyStars:nth-child(#{$j}) {
+      top: random(200) - 20 + %;
+      left: random(120) + 0 +  %;
+    };
+  }
+
+  /*stars*/
 
   .planet {
     width: 80vw;
@@ -32,6 +64,7 @@
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
+
 
     .circle-2,
     .circle-1 {
@@ -59,12 +92,14 @@
             height: 15px;
             top: 25%;
             left: 15%;
+            animation: ampleMovement-hole 1s infinite alternate;
           }
           &.hole-2 {
             width: 20px;
             height: 5px;
             top: 15%;
             right: 35%;
+            animation: ampleMovement-hole 1s infinite alternate;
           }
         }
         .strip {
@@ -77,10 +112,29 @@
           transform: rotate(65deg);
           transform-origin: 0 0;
           border-radius: 50%;
+          animation: ampleMovement 2s alternate infinite;
         }
+
       }
     }
   }
+
+/* Area Keyframes */
+
+@keyframes ampleMovement-hole {
+          from {
+            transform: translate(-2px, 2px);
+          }
+        }
+
+@keyframes ampleMovement {
+          from {
+            left: 97%;
+          }
+        }
+
+/* Area Keyframes end*/
+
 
   .land-left {
     width: 50%;

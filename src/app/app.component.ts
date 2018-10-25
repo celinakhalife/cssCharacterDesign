@@ -5,6 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
+
 export class AppComponent {
-  title = 'alien';
+  title = 'alien',
+  tinyStars = new Array(500),
+  stars = new Array(20),
 }
