@@ -1,3 +1,9 @@
+/* Colors
+========= */
+$lightGreen: #66ab7f;
+// $darkGreen : #448444;
+$darkGreen: darken($lightGreen, 30);
+
 .roundShape {
   border-radius: 50%;
 }
@@ -45,12 +51,21 @@
     .eyes {
       position: absolute;
       background: white;
-      border: 2px solid #66ab7f;
-      top: -10px;
+      border: 2px solid $lightGreen;
       top: -10%;
       width: 40px;
       height: 40px;
-
+      &::after {
+        background: rgba(253, 114, 114, 0.801);
+        border-radius: 50%;
+        content: "";
+        height: calc(100% / 2);
+        opacity: 0;
+        position: inherit;
+        top: 100%;
+        transition: opacity 0.5s;
+        width: inherit;
+      }
       &.left {
         left: 30px;
       }
@@ -90,8 +105,8 @@
       width: 50px;
       height: 5px;
       border-width: 10px;
-      border-color: #448444;
-      background: #448444;
+      border-color: $darkGreen;
+      background: $darkGreen;
       border-radius: 5px 5px 50% 50% / 50% 50% 50% 50%;
       border-style: solid;
       position: absolute;
@@ -126,6 +141,27 @@
         transform: rotate(10deg);
         border-radius: 0% 50% 50% 50% / 20% 20% 50% 50%;
         animation: droolingAnimation ease infinite 10s;
+      }
+    }
+
+    &:hover {
+      .mouth {
+        animation: none;
+        .drool {
+          animation: none;
+        }
+      }
+      .eyes {
+        &::after {
+          opacity: 1;
+        }
+        .eyeball {
+          animation-duration: 0.1s;
+          .cirleBig,
+          .cirleSmall {
+            animation: none;
+          }
+        }
       }
     }
   }
@@ -199,7 +235,7 @@
   }
 }
 
-@-webkit-keyframes eyesAnimation {
+@keyframes eyesAnimation {
   0% {
     top: 10%;
     left: 5%;
@@ -214,7 +250,7 @@
   }
 }
 
-@-webkit-keyframes eyesCircleBigAnimation {
+@keyframes eyesCircleBigAnimation {
   0% {
     margin: 5% 0% 0% 10%;
   }
@@ -225,7 +261,7 @@
     margin: 5% 0% 0% 10%;
   }
 }
-@-webkit-keyframes eyesCircleSmallAnimation {
+@keyframes eyesCircleSmallAnimation {
   0% {
     margin: 0% 0% 0% 45%;
   }
@@ -237,7 +273,7 @@
   }
 }
 
-@-webkit-keyframes droolingAnimation {
+@keyframes droolingAnimation {
   75% {
     height: 20px;
     top: 12px;
@@ -251,7 +287,7 @@
   }
 }
 
-@-webkit-keyframes mouthAnimation {
+@keyframes mouthAnimation {
   75% {
     height: 5px;
     border-left-width: 10px;
@@ -269,7 +305,7 @@
   }
 }
 
-@-webkit-keyframes teethAnimation {
+@keyframes teethAnimation {
   75% {
     width: 75%;
   }
@@ -281,7 +317,7 @@
   }
 }
 
-@-webkit-keyframes helloAnimation {
+@keyframes helloAnimation {
   10% {
     transform: rotate(0deg);
   }

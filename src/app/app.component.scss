@@ -21,6 +21,53 @@
   overflow: hidden;
   position: relative;
 
+  /*stars*/
+
+  .stars,
+  .tinyStars {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 0;
+  }
+
+  .stars {
+    width: 3px;
+    height: 3px;
+  }
+
+  .tinyStars {
+    width: 1px;
+    height: 1px;
+  }
+
+  @for $i from 0 through 40 {
+    .stars:nth-child(#{$i}) {
+      top: random(50) + 1 + %;
+      left: random(100) + %;
+      animation: starts-shine random(10) + s infinite alternate random(10) + s;
+    }
+  }
+
+  @keyframes starts-shine {
+    from {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    to {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  @for $j from 0 through 500 {
+    .tinyStars:nth-child(#{$j}) {
+      top: random(200) - 20 + %;
+      left: random(120) + %;
+      animation: starts-shine random(10) + s infinite alternate random(10) + s;
+    }
+  }
+
+  /*stars*/
+
   .planet {
     width: 80vw;
     height: 80vw;
@@ -59,12 +106,14 @@
             height: 15px;
             top: 25%;
             left: 15%;
+            animation: ampleMovement-hole 1s infinite alternate;
           }
           &.hole-2 {
             width: 20px;
             height: 5px;
             top: 15%;
             right: 35%;
+            animation: ampleMovement-hole 1s infinite alternate;
           }
         }
         .strip {
@@ -77,10 +126,27 @@
           transform: rotate(65deg);
           transform-origin: 0 0;
           border-radius: 50%;
+          animation: ampleMovement 2s alternate infinite;
         }
       }
     }
   }
+
+  /* Area Keyframes */
+
+  @keyframes ampleMovement-hole {
+    from {
+      transform: translate(-2px, 2px);
+    }
+  }
+
+  @keyframes ampleMovement {
+    from {
+      left: 97%;
+    }
+  }
+
+  /* Area Keyframes end*/
 
   .land-left {
     width: 50%;
