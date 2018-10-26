@@ -4,17 +4,17 @@
     top,
     rgba(61, 36, 101, 1) 0%,
     rgba(82, 144, 242, 1) 100%
-    ); /* FF3.6-15 */
+  ); /* FF3.6-15 */
   background: -webkit-linear-gradient(
     top,
     rgba(61, 36, 101, 1) 0%,
     rgba(82, 144, 242, 1) 100%
-    ); /* Chrome10-25,Safari5.1-6 */
+  ); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(
     to bottom,
     rgba(61, 36, 101, 1) 0%,
     rgba(82, 144, 242, 1) 100%
-    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d2465', endColorstr='#5290f2',GradientType=0 ); /* IE6-9 */
   width: 100%;
   height: 100%;
@@ -22,33 +22,48 @@
   position: relative;
 
   /*stars*/
-  
-  .stars {
-    color: white;
-    font-size: 30px;
+
+  .stars,
+  .tinyStars {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
     position: absolute;
     z-index: 0;
+  }
+
+  .stars {
+    width: 3px;
+    height: 3px;
+  }
+
+  .tinyStars {
+    width: 1px;
+    height: 1px;
   }
 
   @for $i from 0 through 40 {
     .stars:nth-child(#{$i}) {
       top: random(50) + 1 + %;
-      left: random(100) + 0 +  %;
-    };
+      left: random(100) + %;
+      animation: starts-shine random(10) + s infinite alternate random(10) + s;
+    }
   }
 
-  /*tiny*/
-  .tinyStars {
-    font-size: 10px;
-    color: white;
-    position: absolute;
+  @keyframes starts-shine {
+    from {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    to {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
   }
 
   @for $j from 0 through 500 {
     .tinyStars:nth-child(#{$j}) {
       top: random(200) - 20 + %;
-      left: random(120) + 0 +  %;
-    };
+      left: random(120) + %;
+      animation: starts-shine random(10) + s infinite alternate random(10) + s;
+    }
   }
 
   /*stars*/
@@ -64,7 +79,6 @@
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
-
 
     .circle-2,
     .circle-1 {
@@ -114,27 +128,25 @@
           border-radius: 50%;
           animation: ampleMovement 2s alternate infinite;
         }
-
       }
     }
   }
 
-/* Area Keyframes */
+  /* Area Keyframes */
 
-@keyframes ampleMovement-hole {
-          from {
-            transform: translate(-2px, 2px);
-          }
-        }
+  @keyframes ampleMovement-hole {
+    from {
+      transform: translate(-2px, 2px);
+    }
+  }
 
-@keyframes ampleMovement {
-          from {
-            left: 97%;
-          }
-        }
+  @keyframes ampleMovement {
+    from {
+      left: 97%;
+    }
+  }
 
-/* Area Keyframes end*/
-
+  /* Area Keyframes end*/
 
   .land-left {
     width: 50%;
